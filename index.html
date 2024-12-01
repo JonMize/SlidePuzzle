@@ -7,12 +7,22 @@
   <link rel="stylesheet" href="puzzle.css">
 </head>
 <body>
+  <audio id="background-music" autoplay loop>
+      <source src="music.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+  </audio>
   <select id="grid-size" class="dropdown">
     <option value="3">3x3 Grid</option>
     <option value="4">4x4 Grid</option>
     <option value="5">5x5 Grid</option>
-</select>
+  </select>
   <div id="board"></div>
   <script src="puzzle.js"></script>
+  <script>
+      document.addEventListener("DOMContentLoaded", () => {
+          const music = document.getElementById("background-music");
+          music.volume = 0.7; 
+      });
+  </script>
 </body>
 </html>
