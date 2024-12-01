@@ -4,10 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sliding Puzzle</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="puzzle.css">
 </head>
 <body>
-  <div id="puzzle-container"></div>
-  <script src="script.js"></script>
+  <select id="grid-size" class="dropdown">
+    <option value="3">3x3 Grid</option>
+    <option value="4">4x4 Grid</option>
+    <option value="5">5x5 Grid</option>
+</select>
+  <div id="board"></div>
+  <script src="puzzle.js"></script>
 </body>
 </html>
