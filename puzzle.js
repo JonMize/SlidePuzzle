@@ -49,6 +49,23 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    function gameWon() {
+        const correct = Array.from({ length: rows * columns }, (_, i) => 
+            i === rows * columns - 1 ? "x" : `${i + 1}`
+        );
+    
+        for (let i = 0; i < board.children.length; i++) {
+            const tile = board.children[i];
+            const rightNumber = correct[i];
+            const rightTile = tile.src.split('/').pop().split('.')[0];
+           
+            if (rightNumber !== rightTile) {
+                return false; // Not solved yet 
+            }
+        }
+        return true; // Solved
+    }
+    
     function dragStart() {
         currTile = this;
     }
@@ -68,8 +85,13 @@ document.addEventListener("DOMContentLoaded", () => {
         if (otherTile.src.includes("x.png") && isAdjacent(currTile, otherTile)) {
             // Swap images
             [currTile.src, otherTile.src] = [otherTile.src, currTile.src];
+
+            if (gameWon()) {
+                alert("You solved the puzzle!");
+            }
+
         }
-    }
+    }  
 
     function dragEnd() {}
 
