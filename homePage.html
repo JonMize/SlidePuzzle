@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSU SlidePuzzle</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <img src="images/pic1.png" alt="Georgia State University Logo" class="logo">
+        <h1 class="title">GSU Sliding Tile</h1>
+    </header>
+    <div class="mascot-container">
+        <img src="images/mascot.gif" alt="GSU Panther Mascot" class="mascot">
+    </div>
+
+    <div class="controls">
+        <select id="grid-size" class="dropdown">
+            <option value="3x3">3x3 Grid</option>
+            <option value="4x4">4x4 Grid</option>
+            <option value="6x6">6x6 Grid</option>
+        </select>
+        <div class="button-container">
+            <button class="btn play-btn" onclick="startGame()">Play</button>
+            <button class="btn rules-btn"><a href="rulesPage.html">Rules</a></button>
+        </div>
+    </div>
+
+    <!-- Game container -->
+    <div id="game-container"></div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
