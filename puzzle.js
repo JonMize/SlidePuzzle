@@ -9,6 +9,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const board = document.getElementById("board");
     const gridSizeSelector = document.getElementById("grid-size");
 
+    const music = document.getElementById("background-music");
+    music.volume = 0.1; 
+  
+
     function initializeGame() {
         rows = columns = parseInt(gridSizeSelector.value);
         const tileSize = 360 / rows; // Dynamically calculate tile size
