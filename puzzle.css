@@ -9,18 +9,28 @@ body {
     width: 400px;
 }
 #board {
-    display: grid;
-    gap: 2px;
-    justify-content: center;
-    align-items: center;
+    width: 50vw; 
+    height: 50vw; 
+    max-width: 500px; 
+    max-height: 500px;
     background-color: lightblue;
     border: 10px solid #0c67ae;
     margin: 0 auto;
+    display: grid;
+    gap: 2px;
+    justify-content: center;
+    align-content: center;
 }
-
 
 #board img {
     width: 118px;
     height: 118px;
     border: 1px solid #0c67ae;
+}
+.dropdown {
+    margin: 5px;
+    font-size: 1.5em;
+    padding: 10px 20px; 
+    width: 200px; 
+    height: 50px; 
 }
