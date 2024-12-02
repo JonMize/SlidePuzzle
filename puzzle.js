@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const music = document.getElementById("background-music");
     music.volume = 0.1; 
+    let num = getRandomInt(3);
   
 
     function initializeGame() {
@@ -31,12 +32,24 @@ document.addEventListener("DOMContentLoaded", () => {
                 const imgIndex = r * columns + c;
 
                 tile.id = `${r}-${c}`;
-                if(rows === 3){
+                if(rows === 3 && num === 0){
                     tile.src = imgOrder[imgIndex] === "x" ? "images/x.png" : `images/${imgOrder[imgIndex]}.png`;
-                }else if(rows === 4){
+                }else if(rows === 4  && num === 0){
                     tile.src = imgOrder[imgIndex] === "x" ? "images/x.png" : `images4/${imgOrder[imgIndex]}.png`;
-                }else if(rows === 5){
+                }else if(rows === 5  && num === 0){
                     tile.src = imgOrder[imgIndex] === "x" ? "images/x.png" : `images5/${imgOrder[imgIndex]}.png`;
+                }else if(rows === 3 && num === 1){
+                    tile.src = imgOrder[imgIndex] === "x" ? "images/x.png" : `img/${imgOrder[imgIndex]}.png`;
+                }else if(rows === 5  && num === 1){
+                    tile.src = imgOrder[imgIndex] === "x" ? "images/x.png" : `img4/${imgOrder[imgIndex]}.png`;
+                }else if(rows === 4  && num === 1){
+                    tile.src = imgOrder[imgIndex] === "x" ? "images/x.png" : `img5/${imgOrder[imgIndex]}.png`;
+                }else if(rows === 3  && num === 2){
+                    tile.src = imgOrder[imgIndex] === "x" ? "images/x.png" : `helm/${imgOrder[imgIndex]}.png`;
+                }else if(rows === 4  && num === 2){
+                    tile.src = imgOrder[imgIndex] === "x" ? "images/x.png" : `helm4/${imgOrder[imgIndex]}.png`;
+                }else if(rows === 5  && num === 2){
+                    tile.src = imgOrder[imgIndex] === "x" ? "images/x.png" : `helm5/${imgOrder[imgIndex]}.png`;
                 }
                 tile.style.width = `${tileSize}px`;
                 tile.style.height = `${tileSize}px`;
@@ -52,6 +65,9 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     }
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+      }
 
     function gameWon() {
         const correct = Array.from({ length: rows * columns }, (_, i) => 
