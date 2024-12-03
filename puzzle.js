@@ -2,6 +2,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     let rows = 3;
     let columns = 3;
+    let moves = 0;
+    let startTime = Date.now();
 
     let currTile;
     let otherTile; // blank tile
@@ -105,13 +107,28 @@ document.addEventListener("DOMContentLoaded", () => {
         if (otherTile.src.includes("x.png") && isAdjacent(currTile, otherTile)) {
             // Swap images
             [currTile.src, otherTile.src] = [otherTile.src, currTile.src];
+            moves++;
 
             if (gameWon()) {
-                alert("You solved the puzzle!");
+                totalTime = Math.floor((Date.now() - startTime) / 1000); // Time in seconds
+                sessionStorage.setItem('moves', moves);
+                sessionStorage.setItem('time', totalTime);
+                window.location.href = "winPage.html";
+
             }
 
         }
-    }  
+    }
+    
+    function gameUpdate() {
+        const timer = Math.floor((Date.now() - startTime) / 1000);
+        document.getElementById('home_moves').textContent = moves + " Moves";
+        document.getElementById('home_time').textContent = timer + " Seconds";
+      }
+    
+    setInterval(gameUpdate, 1000);
+    
+
 
     function dragEnd() {}
 
