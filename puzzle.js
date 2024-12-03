@@ -42,9 +42,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     tile.src = imgOrder[imgIndex] === "x" ? "images/x.png" : `images5/${imgOrder[imgIndex]}.png`;
                 }else if(rows === 3 && num === 1){
                     tile.src = imgOrder[imgIndex] === "x" ? "images/x.png" : `img/${imgOrder[imgIndex]}.png`;
-                }else if(rows === 5  && num === 1){
-                    tile.src = imgOrder[imgIndex] === "x" ? "images/x.png" : `img4/${imgOrder[imgIndex]}.png`;
                 }else if(rows === 4  && num === 1){
+                    tile.src = imgOrder[imgIndex] === "x" ? "images/x.png" : `img4/${imgOrder[imgIndex]}.png`;
+                }else if(rows === 5  && num === 1){
                     tile.src = imgOrder[imgIndex] === "x" ? "images/x.png" : `img5/${imgOrder[imgIndex]}.png`;
                 }else if(rows === 3  && num === 2){
                     tile.src = imgOrder[imgIndex] === "x" ? "images/x.png" : `helm/${imgOrder[imgIndex]}.png`;
