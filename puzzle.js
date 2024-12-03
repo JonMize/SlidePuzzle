@@ -27,6 +27,11 @@ document.addEventListener("DOMContentLoaded", () => {
         let imgOrder = Array.from({ length: rows * columns }, (_, i) => i + 1);
         imgOrder[imgOrder.length - 1] = "x"; // Last tile is blank
         imgOrder.sort(() => Math.random() - 0.5); // Shuffle tiles
+        
+        startTime = Date.now();
+        moves = 0;
+        document.getElementById('home_moves').textContent = moves + " Moves";
+        document.getElementById('home_time').textContent = "0 Seconds";
 
         for (let r = 0; r < rows; r++) {
             for (let c = 0; c < columns; c++) {
